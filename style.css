@@ -1,0 +1,177 @@
+/* style.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Courier New', monospace;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px 0;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.image-section {
+    flex: 1;
+    overflow: hidden;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.poetic-text {
+    font-size: 24px;
+    line-height: 1.6;
+    text-align: center;
+    border-right: 2px solid white;
+    white-space: pre-wrap;
+    overflow: hidden;
+    min-height: 150px;
+}
+
+/* Additional content styles */
+.additional-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.additional-gif {
+    width: 100%;
+    max-width: 500px;
+}
+
+.additional-gif img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.additional-text-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.additional-text-section {
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.additional-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.poetic-text::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .image-section, .text-section {
+        flex: none;
+        width: 100%;
+    }
+    
+    .image-section {
+        height: 300px;
+    }
+    
+    .poetic-text {
+        font-size: 18px;
+        min-height: 200px;
+    }
+    
+    .additional-content {
+        margin-top: 20px;
+    }
+}
+
+        /* Add this for the music overlay */
+        #experience-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            color: white;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+        }
+        #start-experience {
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #start-experience:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        .overlay-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .overlay-subtitle {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }

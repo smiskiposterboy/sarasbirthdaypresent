@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Glow - For Song Minseo</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- Experience Overlay -->
+    <div id="experience-overlay">
+        <div class="overlay-title">Happy Birthday, Sara.</div>
+        <div class="overlay-subtitle">For the best experience, please use headphones, it's Lamp~</div>
+        <button id="start-experience">시작</button>
+    </div>
+
+    <!-- Hidden Audio -->
+    <audio id="bgMusic" loop>
+        <source src="Hatachi No Koi.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Your existing content (hidden until started) -->
+    <div class="main-content" style="display:none;">
+        <div class="container">
+            <div class="image-section">
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWdnejN6eWRqdWs5Z3M4bjFidjhycnlrdHhldDFva2NiNjduYnE4aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LPlmexh8SLjO9OwPxP/giphy.gif" alt="Ocean Glow">
+            </div>
+            <div class="text-section">
+                <p class="poetic-text" id="typing-text"></p>
+            </div>
+        </div>
+
+        <div class="additional-content">
+            <div class="additional-gif">
+                <img src="https://64.media.tumblr.com/d080f2dcf78145209cbb5504fad96f85/tumblr_nd9d59TM1I1sy9gheo1_500.gifv" alt="Additional GIF">
+            </div>
+            
+            <div class="additional-text-container">
+                <div class="additional-text-section">
+                    <p class="additional-text">Happy birthday Sara, you're friction over dopamine. I feel that the human experience with you gives me a condition that overpowers any form of vice. I could feel every bit of tissue in my body relax when I'm with you. This website is dedicated for you, I feel that you're every bit as worthy to have the digital panorama tilting under the palms of your sweet presence. The room sometimes feel too stagnant, yet whenever I suddenly find myself under your calls and messeges, I see a kaleidoscope, colors that flow through me, something where I don't have to find myself crying in. Last year was so rough, I felt myself burderned with living everyday, it's the slow-burnt feeling of pain that tests my patience in staying, swallowing each bit of pain that I was able to conjure in my life. Then you called, and I remember those nights where it just fades away, I don't know what is it about you, but you do it so effortlessly. I pray so much that one day you won't be so far, so I could finally see you as much as I want, where we can stand throughout the concrete floors of the uknown, I have no idea where we'd go, but I'd want to find out with you. It'll be a dream to reach those days, but for now, I'll be missing you everyday, waiting for your call and message...</p>
+                    <br>
+                    <img src="https://64.media.tumblr.com/8186982b8fbebd3a348b7dfd6b3fae83/9740367a8342b78a-e5/s540x810/f20b523c80c79d940c5bc11e44de784f35d5cd08.gifv">
+                    <img src="cc.jpg">
+
+                    <br>
+                    <br>
+
+                        <div class="additional-text-container">
+                <div class="additional-text-section">
+                    <p class="additional-text"> Could this be us? I've been lonely for so long, yet I realize that loneliness made me closer to you. It taught me where my value stems, and why uniqueness comes in few people. There are billions of people in the world, and one among those billions is you. There's no-one but you that makes me want to go to dimly-lit aquarium with blue haze, with the only separating color in the room being you. I said this many times before, but I'll say it again, I love you. Happy birthday, Sara. </p>
+                    <br>
+                    <img src="d.jpg" width="950" height="800">
+                    <p>Because the season I like is a short thing. It melted away without me noticing. Alone in this moving scenery, I stand still and think of you. Lamp - 恋人へ (For Lovers)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Typing Effect
+        const text = "I feel that the Ocean wouldn't be enough to kill the glow you emanate in the distance, the hue that feels so familiar and sweet. 번역기를 사용하고 있는데, 제가 영어로 한 말을 이해하지 못하셨나요? 하지만 '사랑해'가 무슨 뜻인지 아셨으면 좋겠습니다. :3 -chilli's";
+        const typingText = document.getElementById('typing-text');
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                typingText.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, Math.random() * 50 + 30);
+            }
+        }
+
+        // Start Experience
+        document.getElementById('start-experience').addEventListener('click', function() {
+            // Start music
+            document.getElementById('bgMusic').play().catch(e => {
+                console.log("Audio play failed:", e);
+            });
+            
+            // Show content
+            document.querySelector('.main-content').style.display = 'block';
+            
+            // Remove overlay
+            document.getElementById('experience-overlay').style.display = 'none';
+            
+            // Start typing effect
+            setTimeout(typeWriter, 1000);
+        });
+
+ 
+    </script>
+</body>
+</html>
